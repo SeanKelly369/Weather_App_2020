@@ -1,0 +1,447 @@
+<span [ngSwitch]="day5?.list[36].weather[0].id">
+
+
+  <!-- ThunderStorm conditions -->
+  <span *ngSwitchCase="'200'">
+    <!-- thunderstorm with light rain -->
+    <span *ngIf="nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'201'">
+    <!-- thunderstorm with rain -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'202'">
+    <!-- thunderstorm with heavy rain -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'210'">
+    <!-- light thunderstorm -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'211'">
+    <!-- thunderstorm -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'212'">
+    <!-- heavy thunderstorm -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'221'">
+    <!-- ragged thunderstorm -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'230'">
+    <!-- thunderstorm with light drizzle -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'231'">
+    <!-- thunderstorm with drizzle -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span> </span>
+
+<span *ngSwitchCase="'232'">
+    <!-- thunderstorm with heavy drizzle -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span>
+</span>
+
+
+<!-- Drizzle conditions -->
+<span *ngSwitchCase="'300'">
+    <!-- light intensity drizzle -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sprinkle.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-sprinkle.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'301'">
+    <!-- drizzle -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sprinkle.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-sprinkle.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'302'">
+    <!-- heavy intensity drizzle -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-showers.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-showers.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'310'">
+    <!-- light intensity drizzle rain -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-showers.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-showers.svg">
+    </span>
+</span>
+
+
+<span *ngSwitchCase="'311'">
+    <!-- drizzle rain -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-showers.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-showers.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'312'">
+    <!-- heavy intensity drizzle rain -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-showers.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-showers.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'313'">
+    <!-- shower rain and drizzle -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-thunderstorm.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-thunderstorm.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'314'">
+    <!-- heavy shower rain and drizzle -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-rain-mix.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-rain-mix.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'321'">
+    <!-- shower drizzle -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sprinkle.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-sprinkle.svg">
+    </span>
+</span>
+
+<!-- Rain conditions -->
+<span *ngSwitchCase="'500'">
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-rain.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-rain.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'501'">
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sleet.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-sleet.svg">
+    </span>
+</span>
+
+
+<!-- Snow conditions -->
+
+<span *ngSwitchCase="'600'">
+    <!-- light snow -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-haze.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-snow.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'601'">
+    <!-- snow -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-snow.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-snow.svg">
+    </span>
+</span>
+
+
+<span *ngSwitchCase="'602'">
+    <!-- heavy snow -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-snow.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-snow.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'611'">
+    <!-- sleet -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sleet.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-sleet.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'612'">
+    <!-- shower sleet -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sleet.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-sleet.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'615'">
+    <!-- light rain and snow -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sleet.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-sleet.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'616'">
+    <!-- rain and snow -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sleet.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-sleet.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'620'">
+    <!-- light shower snow -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sleet.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-sleet.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'621'">
+    <!-- shower snow -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-snow.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-snow.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'622'">
+    <!-- heavy shower snow -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-haze.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-snow.svg">
+    </span>
+</span>
+
+
+<!-- Atmosphere conditions -->
+<span *ngSwitchCase="'701'">
+    <!-- mist -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-haze.svg">
+    </span>
+<span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-snow.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'711'">
+    <!-- smoke -->
+    <img width="40rem" src="../assets/icons/wi-smoke.svg">
+  </span>
+
+<span *ngSwitchCase="'721'">
+    <!-- haze -->
+    <img width="40rem" src="../assets/icons/wi-smog.svg">
+  </span>
+
+<span *ngSwitchCase="'731'">
+    <!-- sand, dust whirls -->
+    <img width="40rem" src="../assets/icons/wi-sandstorm.svg">
+  </span>
+
+<span *ngSwitchCase="'741'">
+    <!-- fog -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-fog.svg">
+    </span>
+    <span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-fog.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'751'">
+    <!-- sand -->
+    <img width="40rem" src="../assets/icons/wi-sandstorm.svg">
+  </span>
+
+<span *ngSwitchCase="'761'">
+    <!-- dust -->
+    <img width="40rem" src="../assets/icons/wi-smog.svg">
+  </span>
+
+<span *ngSwitchCase="'762'">
+    <!-- volcanic ash -->
+    <img width="40rem" src="../assets/icons/wi-smog.svg">
+  </span>
+
+<span *ngSwitchCase="'771'">
+    <!-- squalls -->
+    <span *ngIf="nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sunny.svg">
+    </span>
+    <span *ngIf="nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-clear.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'781'">
+    <!-- tornado -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sprinkle.svg">
+    </span>
+    <span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-sprinkle.svg">
+    </span>
+</span>
+
+<!-- Clear conditions -->
+<span *ngSwitchCase="'800'">
+    <!-- clear sky -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sunny.svg">
+    </span>
+    <span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-clear.svg">
+    </span>
+</span>
+
+<!-- Cloudy conditions -->
+<span *ngSwitchCase="'801'">
+    <!-- few cloud -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sunny-overcast.svg">
+    </span>
+    <span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-partly-cloudy.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'802'">
+    <!-- scattered clouds -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sunny-overcast.svg">
+    </span>
+    <span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-partly-cloudy.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'803'">
+    <!-- broken cloud -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-sunny-overcast.svg">
+    </span>
+    <span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-partly-cloudy.svg">
+    </span>
+</span>
+
+<span *ngSwitchCase="'804'">
+    <!-- overcast clouds -->
+    <span *ngIf="this.nightOrDay === 'd'">
+      <img width="40rem" src="../assets/icons/wi-day-cloudy-high.svg">
+    </span>
+    <span *ngIf="this.nightOrDay === 'n'">
+      <img width="40rem" src="../assets/icons/wi-night-cloudy.svg">
+    </span>
+</span>
+
+<!-- Default condition -->
+<span *ngSwitchDefault>
+    <img width="40rem" src="../assets/icons/wi-day-sunny.svg">
+  </span>

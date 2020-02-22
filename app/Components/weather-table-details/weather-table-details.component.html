@@ -1,0 +1,253 @@
+<div id="table_container">
+  <div id="table-grid">
+      <div class="description">Time</div>
+      <div>{{currentTime + (3600000*3) | date: 'shortTime'}}</div>
+      <div>{{currentTime + (3600000*9) | date: 'shortTime'}}</div>
+      <div>{{currentTime + (3600000*15) | date: 'shortTime'}}</div>
+      <div>{{currentTime + (3600000*24) | date: 'MMM d'}}</div>
+      <div>{{currentTime + (3600000*48) | date: 'MMM d'}}</div>
+      <div>{{currentTime + (3600000*72) | date: 'MMM d'}}</div>
+      <div>{{currentTime + (3600000*96) | date: 'MMM d'}}</div>
+      <div class="show-or-not" >{{currentTime + (3600000*120) | date: 'MMM d'}}</div>
+
+      <div class="description table-grid-odd">Outlook</div>
+      <div class="table-grid-odd">
+          <app-weather-table-switch-three-hrs></app-weather-table-switch-three-hrs>
+      </div>
+      <div class="table-grid-odd">
+          <app-weather-table-switch-nine-hrs></app-weather-table-switch-nine-hrs>
+      </div>
+      <div class="table-grid-odd">
+          <app-weather-table-switch-fifteen-hrs></app-weather-table-switch-fifteen-hrs>
+      </div>
+      <div class="table-grid-odd">
+          <app-weather-table-switch-day1></app-weather-table-switch-day1>
+      </div>
+      <div class="table-grid-odd">
+          <app-weather-table-switch-day2></app-weather-table-switch-day2>
+      </div>
+      <div class="table-grid-odd">
+          <app-weather-table-switch-day3></app-weather-table-switch-day3>
+      </div>
+      <div class="table-grid-odd">
+          <app-weather-table-switch-day4></app-weather-table-switch-day4>
+      </div>
+      <div class="show-or-not table-grid-odd">
+        <app-weather-table-switch-day5></app-weather-table-switch-day5>
+      </div>
+
+      <div class="description">Temperature</div>
+      <div>
+          <span *ngIf="!this.isC">
+                {{weather?.list[1].main.temp - 273.15 | number: '1.0-0'}}°C
+            </span>
+          <span *ngIf="this.isC">
+                {{ (weather?.list[1].main.temp - 273.15) * (9/5) + 32 | number: '1.0-0'}}°F
+            </span>
+      </div>
+
+      <div>
+          <span *ngIf="!this.isC">
+                {{weather?.list[3].main.temp - 273.15 | number: '1.0-0'}}°C
+            </span>
+          <span *ngIf="this.isC">
+                {{ (weather?.list[3].main.temp - 273.15) * (9/5) + 32 | number: '1.0-0'}}°F
+            </span>
+      </div>
+
+      <div>
+          <span *ngIf="!this.isC">
+                {{weather?.list[5].main.temp - 273.15 | number: '1.0-0'}}°C
+            </span>
+          <span *ngIf="this.isC">
+                {{ (weather?.list[5].main.temp - 273.15) * (9/5) + 32 | number: '1.0-0'}}°F
+            </span>
+      </div>
+
+      <div>
+          <span *ngIf="!this.isC">
+                {{weather?.list[7].main.temp - 273.15 | number: '1.0-0'}}°C
+            </span>
+          <span *ngIf="this.isC">
+                {{ (weather?.list[7].main.temp - 273.15) * (9/5) + 32 | number: '1.0-0'}}°F
+            </span>
+      </div>
+
+      <div>
+          <span *ngIf="!this.isC">
+                {{weather?.list[15].main.temp - 273.15 | number: '1.0-0'}}°C
+            </span>
+          <span *ngIf="this.isC">
+                {{ (weather?.list[15].main.temp - 273.15) * (9/5) + 32 | number: '1.0-0'}}°F
+            </span>
+      </div>
+
+      <div>
+          <span *ngIf="!this.isC">
+                {{weather?.list[23].main.temp - 273.15 | number: '1.0-0'}}°C
+            </span>
+          <span *ngIf="this.isC">
+                {{ (weather?.list[23].main.temp - 273.15) * (9/5) + 32 | number: '1.0-0'}}°F
+            </span>
+      </div>
+
+      <div>
+          <span *ngIf="!this.isC">
+                {{weather?.list[31].main.temp - 273.15 | number: '1.0-0'}}°C
+            </span>
+          <span *ngIf="this.isC">
+                {{ (weather?.list[31].main.temp - 273.15) * (9/5) + 32 | number: '1.0-0'}}°F
+            </span>
+      </div>
+
+      <div class="show-or-not">
+          <span *ngIf="!this.isC">
+                {{weather?.list[36].main.temp - 273.15 | number: '1.0-0'}}°C
+            </span>
+          <span *ngIf="this.isC">
+                {{ (weather?.list[36].main.temp - 273.15) * (9/5) + 32 | number: '1.0-0'}}°F
+            </span>
+      </div>
+
+      <div class="description table-grid-odd">Air Pressure</div>
+
+      <div class="table-grid-odd">
+        {{weather?.list[1].main.pressure}}°C
+      </div>
+      <div class="table-grid-odd">
+        {{weather?.list[3].main.pressure}}°C
+      </div>
+      <div class="table-grid-odd">
+        {{weather?.list[5].main.pressure}}°C
+      </div>
+      <div class="table-grid-odd">
+        {{weather?.list[7].main.pressure}}°C
+      </div>
+      <div class="table-grid-odd">
+        {{weather?.list[15].main.pressure}}°C
+      </div>
+      <div class="table-grid-odd">
+        {{weather?.list[23].main.pressure}}°C
+      </div>
+      <div class="table-grid-odd">
+        {{weather?.list[31].main.pressure}}°C
+      </div>
+      <div class="table-grid-odd show-or-not">
+        {{weather?.list[39].main.pressure}}°C
+      </div>
+
+
+      <div class="description">Wind Speed</div>
+      <div>
+          <span *ngIf="this.isKm">
+                {{weather?.list[1].wind.speed}} km/h
+            </span>
+          <span *ngIf="!this.isKm">
+                {{ (weather?.list[1].wind.speed * 0.621371) | number: '1.2-2'}} m/h
+            </span>
+      </div>
+      <div>
+          <span *ngIf="this.isKm">
+                {{weather?.list[3].wind.speed}} km/h
+            </span>
+          <span *ngIf="!this.isKm">
+                {{ (weather?.list[3].wind.speed * 0.621371) | number: '1.2-2'}} m/h
+            </span>
+      </div>
+      <div>
+          <span *ngIf="this.isKm">
+                {{weather?.list[5].wind.speed}} km/h
+            </span>
+          <span *ngIf="!this.isKm">
+                {{ (weather?.list[5].wind.speed * 0.621371) | number: '1.2-2'}} m/h
+            </span>
+      </div >
+      <div>
+          <span *ngIf="this.isKm">
+                {{weather?.list[7].wind.speed}} km/h
+            </span>
+          <span *ngIf="!this.isKm">
+                {{ (weather?.list[7].wind.speed * 0.621371) | number: '1.2-2'}} m/h
+            </span>
+      </div>
+      <div>
+          <span *ngIf="this.isKm">
+                {{weather?.list[15].wind.speed}} km/h
+            </span>
+          <span *ngIf="!this.isKm">
+                {{ (weather?.list[15].wind.speed * 0.621371) | number: '1.2-2'}} m/h
+            </span>
+      </div>
+      <div>
+          <span *ngIf="this.isKm">
+                {{weather?.list[23].wind.speed}} km/h
+            </span>
+          <span *ngIf="!this.isKm">
+                {{ (weather?.list[23].wind.speed * 0.621371) | number: '1.2-2'}} m/h
+            </span>
+      </div>
+      <div>
+          <span *ngIf="this.isKm">
+                {{weather?.list[31].wind.speed}} km/h
+            </span>
+          <span *ngIf="!this.isKm">
+                {{ (weather?.list[31].wind.speed * 0.621371) | number: '1.2-2'}} m/h
+            </span>
+      </div>
+      <div class="show-or-not">
+          <span *ngIf="this.isKm">
+                {{weather?.list[39].wind.speed}} km/h
+            </span>
+          <span *ngIf="!this.isKm">
+                {{ (weather?.list[39].wind.speed * 0.621371) | number: '1.2-2'}} m/h
+            </span>
+      </div>
+
+      <div class="description table-grid-odd">Wind Direction</div>
+      <div class="table-grid-odd">{{weather?.list[0].wind.deg | number: '1.0-0' }}°
+        <app-wind-directions-now></app-wind-directions-now>
+      </div>
+      <div class="table-grid-odd">{{weather?.list[1].wind.deg | number: '1.0-0' }}°
+        <app-wind-directions3hrs></app-wind-directions3hrs>
+      </div>
+      <div class="table-grid-odd">{{weather?.list[3].wind.deg | number: '1.0-0' }}°
+        <app-wind-directions9hrs></app-wind-directions9hrs>
+      </div>
+      <div class="table-grid-odd">{{weather?.list[5].wind.deg | number: '1.0-0' }}°
+          <app-wind-directions15hrs></app-wind-directions15hrs>
+      </div>
+      <div class="table-grid-odd">{{weather?.list[12].wind.deg | number: '1.0-0' }}°
+          <app-wind-directions2days></app-wind-directions2days>
+      </div>
+      <div class="table-grid-odd">{{weather?.list[20].wind.deg | number: '1.0-0' }}°
+          <app-wind-directions3days></app-wind-directions3days>
+      </div>
+      <div class="table-grid-odd">{{weather?.list[28].wind.deg | number: '1.0-0' }}°
+        <app-wind-directions4days></app-wind-directions4days>
+      </div >
+      <div class="table-grid-odd show-or-not">{{weather?.list[36].wind.deg | number: '1.0-0' }}°
+        <app-wind-directions5days></app-wind-directions5days>
+      </div>
+
+      <div class="description">Sunrise</div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div>{{this.sunriseSunsetToday?.results.sunrise}}</div>
+      <div>{{this.sunriseSunsetTomorrow?.results.sunrise}}</div>
+      <div>{{this.sunriseSunsetPlusTwo?.results.sunrise}}</div>
+      <div>{{this.sunriseSunsetPlusThree?.results.sunrise}}</div>
+      <div class="show-or-not">{{this.sunriseSunsetPlusFour?.results.sunrise}}</div>
+
+      <div class="description table-grid-odd">Sunset</div>
+      <div class="table-grid-odd"></div>
+      <div class="table-grid-odd"></div>
+      <div class="table-grid-odd"></div>
+      <div class="table-grid-odd">{{this.sunriseSunsetToday?.results.sunset}}</div>
+      <div class="table-grid-odd">{{this.sunriseSunsetTomorrow?.results.sunset}}</div>
+      <div class="table-grid-odd">{{this.sunriseSunsetPlusTwo?.results.sunset}}</div>
+      <div class="table-grid-odd">{{this.sunriseSunsetPlusThree?.results.sunset}}</div>
+      <div class="table-grid-odd show-or-not">{{this.sunriseSunsetPlusFour?.results.sunset}}</div>
+
+  </div>
+</div>

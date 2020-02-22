@@ -1,0 +1,250 @@
+$color-black-translucent: rgba(0, 0, 0, 0.34);
+.weatherIcons {
+    padding: .22rem;
+}
+
+.temp_low {
+    color: rgb(146, 146, 146);
+}
+
+.background-image {
+    width: 100%;
+}
+
+.col-sm-12 {
+    position: relative;
+    margin-right: 4rem;
+}
+
+.col-sm-4 {
+    margin: 0 auto;
+    padding: 0;
+}
+
+#current {
+    background-color: $color-black-translucent;
+    position: absolute;
+    z-index: 2;
+    height: 75%;
+    color: white;
+}
+
+#main_weather_icon {
+    margin: 0 auto;
+    margin-top: .6rem;
+}
+
+#current_temp {
+    color: white;
+    text-align: center;
+    font-size: 500%;
+    margin: auto;
+    padding: 1rem;
+}
+
+.row {
+    margin-bottom: -2rem;
+}
+
+#location {
+    text-align: center;
+    font-size: 245%;
+}
+
+#nation {
+    font-size: 160%;
+    object-fit: contain;
+    text-overflow: inherit;
+    text-align: center;
+    transform: translateY(-1rem);
+    margin: 0 auto;
+}
+
+#address_container {
+    background-color: blue;
+}
+
+#main_weather_icon {
+    transform: translateX(0rem);
+}
+
+#current-weather-info {
+    z-index: 6;
+    height: 21rem;
+    transform: translateY(-23.47rem);
+    padding: .6rem;
+    padding-top: 1rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color: $color-black-translucent;
+    float: right;
+    border-top-left-radius: 1.5rem;
+    top: -160px;
+}
+
+#bgImage {
+    z-index: -1;
+    ;
+}
+
+.v-separator {
+    content: "";
+    display: inline-block;
+    width: 0px;
+    height: 100px;
+    border-right: 1px solid white;
+    border-left: 2px solid white;
+    margin-left: 1rem;
+}
+
+#marginRow {
+    margin: 3px;
+    padding: 3px;
+}
+
+#current-air-pressure {
+    transform: translateY(200px);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto 12% auto;
+    grid-template-rows: 2.1rem 2.1rem .25rem 2.1rem 2.1rem .25rem 2.1rem 2.1rem 2.1rem 2.1rem;
+    grid-gap: 10px;
+    //padding: 4px;
+}
+
+.grid-container>div {
+    text-align: left;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+#table_container {
+    margin: 0 auto;
+    z-index: 70;
+    height: 120px;
+    text-align: center;
+}
+
+#table-grid {
+    //transform: translateY(-23.47rem);
+    width: 100%;
+    display: grid;
+    grid-template-rows: .7fr 1.5fr 1.1fr 1.1fr .7fr .7fr .7fr;
+    grid-template-columns: 7fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr;
+    background-color: #171c20;
+}
+
+#table-grid>div {
+    color: white;
+    margin-bottom: .4rem;
+    font-size: 1.4rem;
+}
+
+
+@media only screen and (max-width: 1140px) {
+  #table-grid>div {
+    font-size: 1.2rem;
+  }
+
+}
+
+@media only screen and (max-width: 993px) {
+  #table-grid>div {
+    font-size: 1.0rem;
+  }
+  #table-grid {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 870px) {
+  .show-or-not {
+    background-color: indianred;
+    display: none;
+  }
+
+  #table-grid {
+    grid-template-columns: 7fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr;
+  }
+}
+
+
+
+.table-grid-odd {
+    background-color: rgb(39, 39, 39);
+    padding-bottom: 4px;
+    padding-top: 4px;
+}
+
+.description {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+#KMtoMToggle,
+#CtoFToggle {
+    z-index: 12;
+    font-size: 2rem;
+    color: white;
+    border: none;
+    border-radius: none;
+}
+
+#KMtoMToggle:hover,
+#CtoFToggle:hover {
+    outline: solid rgb(255, 255, 255) 2px;
+    border-radius: none;
+}
+
+#KMtoMToggle:focus,
+#CtoFToggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(91, 194, 194, 0);
+    background-color: rgba(0, 0, 0, 0.387);
+    border: none;
+    border-radius: none;
+}
+
+.col-sm-3 {
+    transform: translate(51rem, -32rem);
+    border-radius: none;
+}
+
+@media(min-width: 1000px) {
+    .col-sm-3 {
+        transform: translate(51rem, -32rem);
+        border-radius: none;
+    }
+}
+
+.btn-primary {
+    background-color: rgba(0, 0, 0, 0.244);
+    height: 100%;
+}
+
+#button-grid {
+    display: grid;
+    grid-template-columns: 1fr .1fr 1fr;
+}
+
+#button-grid>div {
+    color: white;
+    margin: 0 auto;
+}
+
+#left-grid {
+    display: grid;
+    grid-auto-rows: 1fr 2fr .1fr 1.2fr .5fr 1.4fr 3.7fr 2fr .7fr 1fr;
+    height: 30rem;
+    min-width: 14rem;
+}
+
+#left-grid>div {
+    color: white;
+    margin: 0 auto;
+}
+
+#currentTime {
+    font-size: 130%;
+}

@@ -1,0 +1,36 @@
+<div id="current">
+
+  <div id=left-grid>
+      <div></div>
+      <div>
+          <div>
+              <span id="main_weather_icon">
+                <app-weather-table-switch-now>
+
+                </app-weather-table-switch-now>
+            </span>
+
+          </div>
+      </div>
+      <div></div>
+      <div id="current_temp">
+          <span id=temp_span *ngIf="!isCLocal">
+            {{localWeather?.main.temp -273.48 | number:'1.0-0'}}°C
+        </span>
+          <span id=temp_span *ngIf="isCLocal">
+            {{ (localWeather?.main.temp -273.48) * (9/5) + 32 | number: '1.0-0'}}°F
+        </span>
+      </div>
+      <div></div>
+      <div id="location">
+          {{this.localWeather?.name}}
+      </div>
+      <div id="nation">
+          {{this?.country}}
+      </div>
+
+      <div id="currentTime">{{this?.currentTime | date: 'dd/MM/yyyy'}}</div>
+      <div></div>
+      <div></div>
+  </div>
+</div>

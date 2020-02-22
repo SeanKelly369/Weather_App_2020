@@ -1,0 +1,89 @@
+$color-black-translucent: rgba(0, 0, 0, 0.34);
+
+#temps {
+  margin: auto 0;
+}
+
+#KMtoMToggle,
+#CtoFToggle {
+    z-index: 12;
+    font-size: 2rem;
+    color: white;
+    border: none;
+    border-radius: 1px;
+    background-color: rgba(41, 41, 41, 0.322);
+}
+
+#KMtoMToggle:hover,
+#CtoFToggle:hover {
+    outline: solid rgb(255, 255, 255) 2px;
+    // border-radius: 12px;
+    box-shadow: 0 0 1 1.2rem rgba(32, 175, 175, 0);
+
+}
+
+#KMtoMToggle:focus,
+#CtoFToggle:focus {
+    box-shadow: 0 0 0 .2rem rgba(32, 175, 175, 0);
+    // background-color: rgba(0, 0, 0, 0.387);
+    border: none;
+    border-radius: none;
+}
+
+#button-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr .1fr 1fr 1fr;
+}
+
+#button-grid>div {
+    color: white;
+    margin: 0 auto;
+}
+
+#current-weather-info {
+    z-index: 6;
+    height: 21rem;
+    padding: .6rem;
+    padding-top: 1rem;
+    font-size: 1.6rem;
+    color: white;
+    border-top-left-radius: 1.5rem;
+}
+
+.v-separator {
+    content: "";
+    display: inline-block;
+    width: 0px;
+    height: 180px;
+    border-right: 1px solid white;
+    border-left: 2px solid white;
+    margin-left: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto 12% auto;
+    grid-template-rows: 2.1rem 2.1rem .25rem 2.1rem 2.1rem 2.1rem 2.1rem 2.1rem 2.1rem 2.1rem;
+    grid-gap: 10px;
+}
+
+.grid-container>div {
+    text-align: left;
+    padding-left: 1rem;
+    font-size: 1.5rem;
+}
+
+  @media only screen and (max-width: 1120px) {
+    .grid-container>div {
+      // background-color: orangered;
+      font-size: 1.3rem;
+  }
+}
+
+  @media only screen and (max-width: 800px) {
+    .grid-container>div {
+      // background-color: greenyellow;
+      font-size: 1.1rem;
+  }
+}

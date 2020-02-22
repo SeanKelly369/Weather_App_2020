@@ -1,0 +1,97 @@
+<div class="container">
+
+  <div id="temp">
+    <div id="button-grid">
+        <div></div>
+        <div>
+            <button id="CtoFToggle" (click)="ToggleWeatherMeasurement()" class="btn btn-primary">
+              <span *ngIf="!isC">C°</span>
+              <span *ngIf="isC">F°</span>
+
+            </button>
+        </div>
+        <div></div>
+        <div>
+
+            <button class="btn btn-primary" id="KMtoMToggle" (click)="ToggleDistanceMeasurement()">
+                <span *ngIf="isKm">km/hr</span>
+                <span *ngIf="!isKm">m/hr</span>
+            </button>
+        </div>
+        <div></div>
+
+    </div>
+</div>
+
+  <div>
+    <div id="current-weather-info">
+        <div class="grid-container">
+            <div>
+                Humidity
+            </div>
+            <div>
+                <div class="v-separator"></div>
+            </div>
+            <div>
+                {{this.localWeather?.main.humidity}}%
+            </div>
+
+            <div>
+                Air Pressure
+            </div>
+            <div>
+                <div class="v-separator"></div>
+            </div>
+            <div>
+                {{this.localWeather?.main.pressure | number: '1.0-0'}} mb
+            </div>
+
+            <div></div>
+            <div></div>
+            <div></div>
+
+            <div>
+                Wind Speed
+            </div>
+            <div>
+                <div class="v-separator"></div>
+            </div>
+            <div>
+              <span *ngIf="isKm">
+                {{this.localWeather?.wind.speed}} km/h
+              </span>
+              <span *ngIf="!isKm">
+                {{ (this.localWeather?.wind.speed * 0.621371) | number: '1.2-2'}} m/h
+              </span>
+            </div>
+
+            <div>
+                Wind Direction
+            </div>
+            <div></div>
+            <div>
+                {{localWeather?.wind.deg || 0}}°
+                <app-wind-directions-now></app-wind-directions-now>
+            </div>
+            <div>
+                Sunrise
+            </div>
+            <div>
+
+            </div>
+            <div>
+                {{dayData?.results.sunrise}}
+            </div>
+
+            <div>
+                Sunset
+            </div>
+            <div>
+            </div>
+            <div>
+                {{dayData?.results.sunset}}
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
