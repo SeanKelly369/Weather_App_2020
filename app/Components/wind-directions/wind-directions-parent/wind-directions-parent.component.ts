@@ -4,8 +4,7 @@ import { WeatherDataService } from '../../../Services/weather-data.service';
 
 @Component({
   selector: 'app-wind-directions-parent',
-  templateUrl: './wind-directions-parent.component.html',
-  styleUrls: ['./wind-directions-parent.component.scss']
+  templateUrl: './wind-directions-parent.component.html'
 })
 export class WindDirectionsParentComponent implements OnInit {
 

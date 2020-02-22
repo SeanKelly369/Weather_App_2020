@@ -4,8 +4,7 @@ import { WindDirectionsParentComponent } from '../wind-directions-parent/wind-di
 
 @Component({
   selector: 'app-wind-directions-now',
-  templateUrl: './wind-directions-now.component.html',
-  styleUrls: ['./wind-directions-now.component.scss']
+  templateUrl: './wind-directions-now.component.html'
 })
 export class WindDirectionsNowComponent extends WindDirectionsParentComponent implements OnInit {
 
@@ -26,7 +25,7 @@ export class WindDirectionsNowComponent extends WindDirectionsParentComponent im
       this.dayData = data.wind.deg;
     });
   }
-  
+
 
 }
 

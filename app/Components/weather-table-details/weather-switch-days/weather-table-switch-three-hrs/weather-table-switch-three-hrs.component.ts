@@ -4,8 +4,7 @@ import { WeatherDataService } from '../../../../Services/weather-data.service';
 
 @Component({
   selector: 'app-weather-table-switch-three-hrs',
-  templateUrl: './weather-table-switch-three-hrs.component.html',
-  styleUrls: ['./weather-table-switch-three-hrs.component.scss']
+  templateUrl: './weather-table-switch-three-hrs.component.html'
 })
 export class WeatherTableSwitchThreeHrsComponent extends WeatherTableDetailsComponent implements OnInit {
 

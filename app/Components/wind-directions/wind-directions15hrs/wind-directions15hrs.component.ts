@@ -4,8 +4,7 @@ import { WindDirectionsParentComponent } from '../wind-directions-parent/wind-di
 
 @Component({
   selector: 'app-wind-directions15hrs',
-  templateUrl: './wind-directions15hrs.component.html',
-  styleUrls: ['./wind-directions15hrs.component.scss']
+  templateUrl: './wind-directions15hrs.component.html'
 })
 
 export class WindDirections15hrsComponent extends WindDirectionsParentComponent implements OnInit {
