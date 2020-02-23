@@ -11,16 +11,6 @@ $color-black-translucent: rgba(0, 0, 0, 0.34);
     width: 100%;
 }
 
-.col-sm-12 {
-    position: relative;
-    margin-right: 4rem;
-}
-
-.col-sm-4 {
-    margin: 0 auto;
-    padding: 0;
-}
-
 #current {
     background-color: $color-black-translucent;
     position: absolute;
@@ -84,7 +74,6 @@ $color-black-translucent: rgba(0, 0, 0, 0.34);
 
 #bgImage {
     z-index: -1;
-    ;
 }
 
 .v-separator {
@@ -111,7 +100,6 @@ $color-black-translucent: rgba(0, 0, 0, 0.34);
     grid-template-columns: auto 12% auto;
     grid-template-rows: 2.1rem 2.1rem .25rem 2.1rem 2.1rem .25rem 2.1rem 2.1rem 2.1rem 2.1rem;
     grid-gap: 10px;
-    //padding: 4px;
 }
 
 .grid-container>div {
@@ -128,7 +116,6 @@ $color-black-translucent: rgba(0, 0, 0, 0.34);
 }
 
 #table-grid {
-    //transform: translateY(-23.47rem);
     width: 100%;
     display: grid;
     grid-template-rows: .7fr 1.5fr 1.1fr 1.1fr .7fr .7fr .7fr;
@@ -159,14 +146,37 @@ $color-black-translucent: rgba(0, 0, 0, 0.34);
   }
 }
 
-@media only screen and (max-width: 870px) {
-  .show-or-not {
-    background-color: indianred;
-    display: none;
+@media only screen and (max-width: 840px) {
+  #table-grid>div {
+    font-size: 1.0rem;
   }
 
   #table-grid {
     grid-template-columns: 7fr 5fr 5fr 5fr 5fr 5fr 5fr 5fr;
+  }
+
+  .show-or-not {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .show-or-not2 {
+    display: none;
+  }
+
+  #table-grid {
+    grid-template-columns: 7fr 5fr 5fr 5fr 5fr 5fr 5fr;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .show-or-not3 {
+    display: none;
+  }
+
+  #table-grid {
+    grid-template-columns: 7fr 5fr 5fr 5fr 5fr 5fr;
   }
 }
 
@@ -204,18 +214,6 @@ $color-black-translucent: rgba(0, 0, 0, 0.34);
     background-color: rgba(0, 0, 0, 0.387);
     border: none;
     border-radius: none;
-}
-
-.col-sm-3 {
-    transform: translate(51rem, -32rem);
-    border-radius: none;
-}
-
-@media(min-width: 1000px) {
-    .col-sm-3 {
-        transform: translate(51rem, -32rem);
-        border-radius: none;
-    }
 }
 
 .btn-primary {

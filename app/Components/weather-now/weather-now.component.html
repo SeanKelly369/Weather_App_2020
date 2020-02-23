@@ -4,7 +4,7 @@
     <div id="button-grid">
         <div></div>
         <div>
-            <button id="CtoFToggle" (click)="ToggleWeatherMeasurement()" class="btn btn-primary">
+            <button id="CtoFToggle" (click)="ToggleWeatherMeasurement(isC)" class="btn btn-primary">
               <span *ngIf="!isC">C°</span>
               <span *ngIf="isC">F°</span>
 
@@ -13,7 +13,7 @@
         <div></div>
         <div>
 
-            <button class="btn btn-primary" id="KMtoMToggle" (click)="ToggleDistanceMeasurement()">
+            <button class="btn btn-primary" id="KMtoMToggle" (click)="ToggleDistanceMeasurement(isKm)">
                 <span *ngIf="isKm">km/hr</span>
                 <span *ngIf="!isKm">m/hr</span>
             </button>

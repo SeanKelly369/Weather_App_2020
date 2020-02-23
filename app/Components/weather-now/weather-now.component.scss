@@ -17,7 +17,6 @@ $color-black-translucent: rgba(0, 0, 0, 0.34);
 #KMtoMToggle:hover,
 #CtoFToggle:hover {
     outline: solid rgb(255, 255, 255) 2px;
-    // border-radius: 12px;
     box-shadow: 0 0 1 1.2rem rgba(32, 175, 175, 0);
 
 }
@@ -25,13 +24,14 @@ $color-black-translucent: rgba(0, 0, 0, 0.34);
 #KMtoMToggle:focus,
 #CtoFToggle:focus {
     box-shadow: 0 0 0 .2rem rgba(32, 175, 175, 0);
-    // background-color: rgba(0, 0, 0, 0.387);
     border: none;
     border-radius: none;
 }
 
 #button-grid {
     width: 100%;
+    margin-top: 1.75rem;
+    margin-bottom: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr .1fr 1fr 1fr;
 }
@@ -46,6 +46,7 @@ $color-black-translucent: rgba(0, 0, 0, 0.34);
     height: 21rem;
     padding: .6rem;
     padding-top: 1rem;
+    padding-left: 1.7rem;
     font-size: 1.6rem;
     color: white;
     border-top-left-radius: 1.5rem;
@@ -76,14 +77,18 @@ $color-black-translucent: rgba(0, 0, 0, 0.34);
 
   @media only screen and (max-width: 1120px) {
     .grid-container>div {
-      // background-color: orangered;
       font-size: 1.3rem;
   }
 }
 
   @media only screen and (max-width: 800px) {
     .grid-container>div {
-      // background-color: greenyellow;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
+  }
+
+  .v-separator {
+    margin-left: 0rem;
   }
 }
+
+

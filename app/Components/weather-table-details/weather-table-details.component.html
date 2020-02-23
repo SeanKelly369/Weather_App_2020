@@ -2,19 +2,19 @@
   <div id="table-grid">
       <div class="description">Time</div>
       <div>{{currentTime + (3600000*3) | date: 'shortTime'}}</div>
-      <div>{{currentTime + (3600000*9) | date: 'shortTime'}}</div>
+      <div class="show-or-not3">{{currentTime + (3600000*9) | date: 'shortTime'}}</div>
       <div>{{currentTime + (3600000*15) | date: 'shortTime'}}</div>
       <div>{{currentTime + (3600000*24) | date: 'MMM d'}}</div>
       <div>{{currentTime + (3600000*48) | date: 'MMM d'}}</div>
       <div>{{currentTime + (3600000*72) | date: 'MMM d'}}</div>
-      <div>{{currentTime + (3600000*96) | date: 'MMM d'}}</div>
+      <div class="show-or-not2" >{{currentTime + (3600000*96) | date: 'MMM d'}}</div>
       <div class="show-or-not" >{{currentTime + (3600000*120) | date: 'MMM d'}}</div>
 
       <div class="description table-grid-odd">Outlook</div>
       <div class="table-grid-odd">
           <app-weather-table-switch-three-hrs></app-weather-table-switch-three-hrs>
       </div>
-      <div class="table-grid-odd">
+      <div class="table-grid-odd show-or-not3">
           <app-weather-table-switch-nine-hrs></app-weather-table-switch-nine-hrs>
       </div>
       <div class="table-grid-odd">
@@ -29,7 +29,7 @@
       <div class="table-grid-odd">
           <app-weather-table-switch-day3></app-weather-table-switch-day3>
       </div>
-      <div class="table-grid-odd">
+      <div class="table-grid-odd show-or-not2">
           <app-weather-table-switch-day4></app-weather-table-switch-day4>
       </div>
       <div class="show-or-not table-grid-odd">
@@ -46,7 +46,7 @@
             </span>
       </div>
 
-      <div>
+      <div class="show-or-not3">
           <span *ngIf="!this.isC">
                 {{weather?.list[3].main.temp - 273.15 | number: '1.0-0'}}°C
             </span>
@@ -91,7 +91,7 @@
             </span>
       </div>
 
-      <div>
+      <div class="show-or-not2">
           <span *ngIf="!this.isC">
                 {{weather?.list[31].main.temp - 273.15 | number: '1.0-0'}}°C
             </span>
@@ -112,28 +112,28 @@
       <div class="description table-grid-odd">Air Pressure</div>
 
       <div class="table-grid-odd">
-        {{weather?.list[1].main.pressure}}°C
+        {{weather?.list[1].main.pressure}} mb
+      </div>
+      <div class="table-grid-odd show-or-not3">
+        {{weather?.list[3].main.pressure}} mb
       </div>
       <div class="table-grid-odd">
-        {{weather?.list[3].main.pressure}}°C
+        {{weather?.list[5].main.pressure}} mb
       </div>
       <div class="table-grid-odd">
-        {{weather?.list[5].main.pressure}}°C
+        {{weather?.list[7].main.pressure}} mb
       </div>
       <div class="table-grid-odd">
-        {{weather?.list[7].main.pressure}}°C
+        {{weather?.list[15].main.pressure}} mb
       </div>
       <div class="table-grid-odd">
-        {{weather?.list[15].main.pressure}}°C
+        {{weather?.list[23].main.pressure}} mb
       </div>
-      <div class="table-grid-odd">
-        {{weather?.list[23].main.pressure}}°C
-      </div>
-      <div class="table-grid-odd">
-        {{weather?.list[31].main.pressure}}°C
+      <div class="table-grid-odd show-or-not2">
+        {{weather?.list[31].main.pressure}} mb
       </div>
       <div class="table-grid-odd show-or-not">
-        {{weather?.list[39].main.pressure}}°C
+        {{weather?.list[39].main.pressure}} mb
       </div>
 
 
@@ -146,7 +146,7 @@
                 {{ (weather?.list[1].wind.speed * 0.621371) | number: '1.2-2'}} m/h
             </span>
       </div>
-      <div>
+      <div class="show-or-not3">
           <span *ngIf="this.isKm">
                 {{weather?.list[3].wind.speed}} km/h
             </span>
@@ -186,7 +186,7 @@
                 {{ (weather?.list[23].wind.speed * 0.621371) | number: '1.2-2'}} m/h
             </span>
       </div>
-      <div>
+      <div class="show-or-not2">
           <span *ngIf="this.isKm">
                 {{weather?.list[31].wind.speed}} km/h
             </span>
@@ -207,7 +207,7 @@
       <div class="table-grid-odd">{{weather?.list[0].wind.deg | number: '1.0-0' }}°
         <app-wind-directions-now></app-wind-directions-now>
       </div>
-      <div class="table-grid-odd">{{weather?.list[1].wind.deg | number: '1.0-0' }}°
+      <div class="table-grid-odd show-or-not3">{{weather?.list[1].wind.deg | number: '1.0-0' }}°
         <app-wind-directions3hrs></app-wind-directions3hrs>
       </div>
       <div class="table-grid-odd">{{weather?.list[3].wind.deg | number: '1.0-0' }}°
@@ -222,7 +222,7 @@
       <div class="table-grid-odd">{{weather?.list[20].wind.deg | number: '1.0-0' }}°
           <app-wind-directions3days></app-wind-directions3days>
       </div>
-      <div class="table-grid-odd">{{weather?.list[28].wind.deg | number: '1.0-0' }}°
+      <div class="table-grid-odd show-or-not2">{{weather?.list[28].wind.deg | number: '1.0-0' }}°
         <app-wind-directions4days></app-wind-directions4days>
       </div >
       <div class="table-grid-odd show-or-not">{{weather?.list[36].wind.deg | number: '1.0-0' }}°
@@ -231,22 +231,22 @@
 
       <div class="description">Sunrise</div>
       <div></div>
-      <div></div>
+      <div class="show-or-not3"></div>
       <div></div>
       <div>{{this.sunriseSunsetToday?.results.sunrise}}</div>
       <div>{{this.sunriseSunsetTomorrow?.results.sunrise}}</div>
       <div>{{this.sunriseSunsetPlusTwo?.results.sunrise}}</div>
-      <div>{{this.sunriseSunsetPlusThree?.results.sunrise}}</div>
+      <div class="show-or-not2">{{this.sunriseSunsetPlusThree?.results.sunrise}}</div>
       <div class="show-or-not">{{this.sunriseSunsetPlusFour?.results.sunrise}}</div>
 
       <div class="description table-grid-odd">Sunset</div>
-      <div class="table-grid-odd"></div>
+      <div class="table-grid-odd show-or-not3"></div>
       <div class="table-grid-odd"></div>
       <div class="table-grid-odd"></div>
       <div class="table-grid-odd">{{this.sunriseSunsetToday?.results.sunset}}</div>
       <div class="table-grid-odd">{{this.sunriseSunsetTomorrow?.results.sunset}}</div>
       <div class="table-grid-odd">{{this.sunriseSunsetPlusTwo?.results.sunset}}</div>
-      <div class="table-grid-odd">{{this.sunriseSunsetPlusThree?.results.sunset}}</div>
+      <div class="table-grid-odd show-or-not2">{{this.sunriseSunsetPlusThree?.results.sunset}}</div>
       <div class="table-grid-odd show-or-not">{{this.sunriseSunsetPlusFour?.results.sunset}}</div>
 
   </div>
