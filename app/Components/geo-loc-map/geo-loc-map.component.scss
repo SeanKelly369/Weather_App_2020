@@ -1,0 +1,37 @@
+p {
+  font-family: Lato;
+}
+
+d {
+  fill: orange;
+}
+
+#worldMap {
+  fill: #fff;
+  stroke: #171c20;
+}
+
+.countries, .country{
+  fill: #fff;
+  stroke: #171c20;
+  stroke-width: 0.8px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.country:hover {
+  fill: yellow;
+}
+
+d:hover, .class:hover, path:hover {
+  // background-color: yellow;
+  fill: red;
+  background-color: yellow;
+}
+
+d:active, .class:active, path:active, .map:hover {
+  // background-color: yellow;
+  fill: red;
+  background-color: yellow;
+}
+
