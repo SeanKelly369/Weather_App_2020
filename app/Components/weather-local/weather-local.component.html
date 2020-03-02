@@ -15,15 +15,15 @@
       <div></div>
       <div id="current_temp">
           <span id=temp_span *ngIf="!isCLocal">
-            {{localWeather?.main.temp -273.48 | number:'1.0-0'}}°C
+            {{this?.temp -273.48 | number:'1.0-0'}}°C
         </span>
           <span id=temp_span *ngIf="isCLocal">
-            {{ (localWeather?.main.temp -273.48) * (9/5) + 32 | number: '1.0-0'}}°F
+            {{ (this?.temp -273.48) * (9/5) + 32 | number: '1.0-0'}}°F
         </span>
       </div>
       <div></div>
       <div id="location">
-          {{this.localWeather?.name}}
+          {{this?.locality}}
       </div>
       <div id="nation">
           {{this?.country}}

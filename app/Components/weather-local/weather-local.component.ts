@@ -12,10 +12,12 @@ export class WeatherLocalComponent implements OnInit, DoCheck, OnChanges {
   constructor(public getWeather: WeatherDataService) {}
 
   isCLocal: boolean;
-  public currentTime: number;
-  public abbreviatedCountry: string;
-  public country: string;
+  public currentTime = Date.now();
+  public abbreviatedCountry = 'IE';
+  public country = 'Ireland';
   public localWeather: any;
+  locality = 'Dublin';
+  temp = 273.48;
   @Input() isC: boolean;
 
 
@@ -30,7 +32,6 @@ export class WeatherLocalComponent implements OnInit, DoCheck, OnChanges {
 
     await this.getWeather.initialize();
     this.getLocationDetail();
-    this.currentTime = Date.now();
   }
 
   ngDoCheck() {
@@ -50,7 +51,11 @@ export class WeatherLocalComponent implements OnInit, DoCheck, OnChanges {
 
   public userLocationAdd(localWeather) {
 
+    // console.log(this.localWeather);
     this.abbreviatedCountry = this.localWeather.sys.country;
+    this.locality = this.localWeather.name;
+    this.temp = this.localWeather.main.temp;
+    console.log(this.temp);
 
     switch (this.abbreviatedCountry) {
       case 'AF':

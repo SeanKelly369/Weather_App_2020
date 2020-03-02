@@ -3,10 +3,10 @@ import { WeatherDataService } from '../../../Services/weather-data.service';
 import { WindDirectionsParentComponent } from '../wind-directions-parent/wind-directions-parent.component';
 
 @Component({
-  selector: 'app-wind-directions5days',
-  templateUrl: './wind-directions5days.component.html'
+  selector: 'app-wind-directions1day',
+  templateUrl: './wind-directions1day.component.html'
 })
-export class WindDirections5daysComponent extends WindDirectionsParentComponent implements OnInit {
+export class WindDirections1dayComponent extends WindDirectionsParentComponent implements OnInit {
 
   public windDirection;
 
@@ -22,16 +22,7 @@ export class WindDirections5daysComponent extends WindDirectionsParentComponent 
 
     getWindData() {
     this.getWeather.getForeCast().subscribe((data: any) => {
-
-      if (data.list[39] !== undefined) {
-        this.windDirection = data.list[39].wind.deg;
-      } else if (data.list[38] !== undefined) {
-          this.windDirection = data.list[38].wind.deg;
-      } else if (data.list[37] !== undefined) {
-          this.windDirection = data.list[37].wind.deg;
-      } else {
-          this.windDirection = data.list[31].wind.deg;
-      }
+      this.windDirection = data.list[12].wind.deg;
     });
   }
 

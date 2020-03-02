@@ -33,7 +33,7 @@
                 <div class="v-separator"></div>
             </div>
             <div>
-                {{this.localWeather?.main.humidity}}%
+                {{this?.humidity}}%
             </div>
 
             <div>
@@ -43,7 +43,7 @@
                 <div class="v-separator"></div>
             </div>
             <div>
-                {{this.localWeather?.main.pressure | number: '1.0-0'}} mb
+                {{this?.pressure | number: '1.0-0'}} mb
             </div>
 
             <div></div>
@@ -58,10 +58,10 @@
             </div>
             <div>
               <span *ngIf="isKm">
-                {{this.localWeather?.wind.speed}} km/h
+                {{this?.windSpeed}} km/h
               </span>
               <span *ngIf="!isKm">
-                {{ (this.localWeather?.wind.speed * 0.621371) | number: '1.2-2'}} m/h
+                {{ (this?.windSpeed * 0.621371) | number: '1.2-2'}} m/h
               </span>
             </div>
 
@@ -70,7 +70,7 @@
             </div>
             <div></div>
             <div>
-                {{localWeather?.wind.deg || 0}}°
+                {{this?.windDirection || 0}}°
                 <app-wind-directions-now></app-wind-directions-now>
             </div>
             <div>
@@ -80,7 +80,7 @@
 
             </div>
             <div>
-                {{dayData?.results.sunrise}}
+                {{this?.sunrise}}
             </div>
 
             <div>
@@ -89,7 +89,7 @@
             <div>
             </div>
             <div>
-                {{dayData?.results.sunset}}
+                {{this?.sunset}}
             </div>
         </div>
     </div>
