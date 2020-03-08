@@ -79,7 +79,6 @@ export class Countries {
     { id: 246, name: 'Armenia'},
     { id: 422, name: 'Lebanon'},
     { id: 478, name: 'Syria'},
-    // { id: }
     { id: 376, name: 'Israel'},
     { id: 275, name: 'Palestine'},
     { id: 682, name: 'Saudi Arabia'},
@@ -124,7 +123,6 @@ export class Countries {
     { id: 90, name: 'Solomon Islands'},
     { id: 548, name: 'Vanuatu'},
     { id: 242, name: 'Fiji'},
-    { id: 36, name: 'New Caledonia'},
     { id: 598, name: 'Papau New Guinea'},
     { id: 36, name: 'Australia'},
     { id: 554, name: 'New Zealand'},

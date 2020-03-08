@@ -1,25 +1,25 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, OnChanges, DoCheck } from '@angular/core';
 import * as d3 from 'd3';
 import * as t from 'topojson';
 import { Countries } from './countries';
 import { zoom } from 'd3';
-import { EVENT_MANAGER_PLUGINS } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-geo-loc-map',
   templateUrl: './geo-loc-map.component.html',
   styleUrls: ['./geo-loc-map.component.scss']
 })
-export class GeoLocMapComponent implements OnInit {
+export class GeoLocMapComponent implements OnInit, DoCheck {
   name = 'd3';
   mapFeatures: any;
   airports: any;
   nodeSelection: any;
   countries = new Countries().countries;
   scaledInitial = 1.13;
-  @Output() countryForData: string;
+  test: any;
+  // @Output() countryForData = new EventEmitter();
 
-  public ngOnInit(): void {
+  public ngOnInit() {
     const countries = new Countries().countries;
     let selected = '';
     let country = '';
@@ -67,9 +67,10 @@ export class GeoLocMapComponent implements OnInit {
             .text(country);
           })
           .on('mouseover', function(d) {
-            for(const nation of countries) {
-              if(d.id === nation.id) {
+            for (const nation of countries) {
+              if (d.id === nation.id) {
                 country = nation.name;
+                // console.log(document.getElementsByClassName('selectedCountry')[0].innerHTML);
                 break;
               }
             }
@@ -116,11 +117,14 @@ export class GeoLocMapComponent implements OnInit {
             })
             .on('mousewheel.zoom', null);
           });
-      });
-
-    if (country !== '') {
-      this.countryForData = country;
-    }
-
+        });
   }
+
+  // public ngDoCheck(): void {
+  //   let counter = 0:
+
+  //   counter++;
+  //   console.log(document.getElementsByClassName('selectedCountry')[0].innerHTML);
+
+  // }
 }
