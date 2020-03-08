@@ -6,12 +6,11 @@ d {
   fill: orange;
 }
 
-#worldMap {
-  fill: #fff;
-  stroke: #171c20;
+.map {
+  background-color: brown;
 }
 
-.countries, .country{
+.countries {
   fill: #fff;
   stroke: #171c20;
   stroke-width: 0.8px;
@@ -19,19 +18,25 @@ d {
   stroke-linejoin: round;
 }
 
-.country:hover {
-  fill: yellow;
+.countries:hover {
+  cursor: pointer;
 }
 
-d:hover, .class:hover, path:hover {
-  // background-color: yellow;
-  fill: red;
-  background-color: yellow;
+.selectedCountry {
+  color: white;
+  font-size: 1rem;
+  z-index: 33;
+  position: absolute;
+  float: left;
+  bottom: 14%;
 }
 
-d:active, .class:active, path:active, .map:hover {
-  // background-color: yellow;
-  fill: red;
-  background-color: yellow;
+.countryNames {
+  color: white;
+  font-size: .8rem;
+  z-index: 33;
+  position: absolute;
+
 }
+
 
