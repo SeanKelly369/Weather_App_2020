@@ -1,48 +1,111 @@
-import { Component, OnInit, Output, OnChanges, DoCheck } from '@angular/core';
+import { Component, AfterViewInit, HostListener } from '@angular/core';
 import * as d3 from 'd3';
 import * as t from 'topojson';
 import { Countries } from './countries';
-import { zoom } from 'd3';
 
 @Component({
   selector: 'app-geo-loc-map',
   templateUrl: './geo-loc-map.component.html',
   styleUrls: ['./geo-loc-map.component.scss']
 })
-export class GeoLocMapComponent implements OnInit {
+export class GeoLocMapComponent implements AfterViewInit {
   name = 'd3';
   mapFeatures: any;
   airports: any;
   nodeSelection: any;
   countries: any[] = new Countries().countries;
-  scaledInitial = 1.13;
-  test: any;
-  // @Output() countryForData = new EventEmitter();
+  scaledInitial = 1;
+  zoomValue: any = 1;
+  event: MouseEvent;
 
-  public ngOnInit() {
-    const country2: any[] = new Countries().countries;
-    const countryCities: any[] = new Countries().countryCities;
+  public ngAfterViewInit() {
+    this.createMap();
+  }
 
-    let country = '';
-    let cities2;
+  getZoomValue(event: MouseEvent): void {
+    const regexMatch = /[0-9]/g;
+    const path = event.composedPath()[3] as HTMLInputElement;
+    const worldMapPath = path.childNodes[0].childNodes[0] as unknown as SVGAElement;
+    const s = new XMLSerializer();
+    let str = s.serializeToString(worldMapPath).split(' ')[4]
+      .match(regexMatch).toString().replace(',', '.').replace(/\,/g, '');
+    if (str === '1.7120') { str = '1'; }
+    console.log(str);
+    const inputPosition = parseFloat((document.getElementById('my-range') as HTMLInputElement).value);
+    this.zoomValue = parseFloat(str) + inputPosition;
+    if (this.zoomValue > 5) { this.zoomValue = 5; }
+    const zoomValeStr = this.zoomValue.toString();
+    (document.getElementById('my-range') as HTMLInputElement).value = zoomValeStr;
+    this.setZoom(this.zoomValue);
 
-    const width = 620;
-    const height = 396;
+    return this.zoomValue;
+  }
 
-    const projection = d3.geoMercator()
-      .translate([ width / 2, height / 2])
-      .scale(100);
+  setZoom(zoomValue: number): void {
+    console.log(zoomValue);
+    console.log(this.zoomValue);
+    zoomValue = Math.round(this.zoomValue);
+    console.log( (document.getElementById('my-range') as HTMLInputElement).value);
+    (document.getElementById('worldMap').style as unknown as HTMLElement) =
+      (`transform: scale(${(document.getElementById('my-range') as HTMLInputElement).value})`) as unknown as HTMLElement ;
+    console.log(event.composedPath()[3] as HTMLInputElement);
+  }
 
-    const svg = d3.select('#worldMap').append('svg')
-      .attr('width', width)
-      .attr('height', height);
-    const path = d3.geoPath()
-      .projection(projection);
-    const g = svg.append('g');
-    g.attr('class', 'map');
+  @HostListener('dblclick', ['$event'])
+  onMouseZoom(event: MouseEvent): void {
+    console.log('dblclick check');
+    console.log(event);
+    if ((event.composedPath()[3] as HTMLElement).id === 'worldMap') {
 
-    d3.json('https://raw.githubusercontent.com/cszang/dendrobox/master/data/world-110m2.json')
-    .then((topology) => {
+      this.getZoomValue(event);
+    }
+  }
+
+  // @HostListener('mousemove', ['$event'])
+  // onMouseMove(event: MouseEvent): void  {
+  //   console.log('mousemove check');
+  // }
+
+  @HostListener('drag', ['$event'])
+  whileDrag(event: MouseEvent): void {
+    const xCursor = event.clientX;
+    const yCursor = event.clientY;
+    const imgEle = document.getElementById('worldContainer') as HTMLElement;
+    // console.log(imgEle);
+    if (imgEle !== null) {
+      imgEle.style.left = (xCursor - 100) + 'px';
+      imgEle.style.top = ( yCursor - 100) + 'px';
+
+        console.log(imgEle.style.left + ' - ' + imgEle.style.top);
+
+    }
+  }
+
+
+  createMap() {
+
+      const country2: any[] = new Countries().countries;
+      const countryCities: any[] = new Countries().countryCities;
+
+      let country = '';
+      const width = 620;
+      const height = 396;
+
+      const projection = d3.geoMercator()
+        .translate([ width / 2, height / 2])
+        .scale(100);
+
+      const svg = d3.select('#worldMap').append('svg')
+        .attr('id', 'test')
+        .attr('width', width)
+        .attr('height', height);
+      const path = d3.geoPath()
+        .projection(projection);
+      const g = svg.append('g');
+      g.attr('class', 'map');
+
+      d3.json('../../../assets/world-110m2.json')
+      .then((topology: any) => {
         this.mapFeatures = t.feature(topology, topology.objects.countries);
         for (let i = 0; i < 177; i++) {
           this.countries.push(topology.objects.countries.geometries[i].id);
@@ -63,30 +126,17 @@ export class GeoLocMapComponent implements OnInit {
             g.selectAll('path').style('fill', 'white');
             const mousePos = d3.mouse(this);
             d3.select(this).style('fill', 'red');
-            // d3.selection(this)
             const posX = Math.floor(mousePos[0]);
             const posY = Math.floor(mousePos[1]);
 
             let capitals = '';
             let locations = '';
-            console.log(j.id);
-            console.log(countryCities);
-            console.log(country2);
-            console.log(k);
-            console.log(d);
-            for (let i = 0; i < 130; i++) {
+
+            for (let i = 0; i < country2.length; i++) {
               if ( j.id === country2[i].id ) {
-                console.log(j.id);
-                for(let k = 0; k < countryCities[i].cities.length; k++) {
-                  console.log(countryCities[i].cities[k]);
+                for (let k = 0; k < countryCities[i].cities.length; k++) {
                   locations += `<div>${countryCities[i].cities[k].city}</div>`;
                 }
-
-                // for (let h = 0; countryCities[i].cities.length; h++) {
-                //   capitals += `<div>${countryCities[i].cities[h]}\n</div>`;
-                // }
-                console.log(locations);
-                console.log(capitals);
               }
             }
 
@@ -102,12 +152,7 @@ export class GeoLocMapComponent implements OnInit {
             .attr('position', 'absolute')
             .style('background-color', 'blue')
             .html( (i: any) => {
-              // capitals;
               capitals = locations;
-              // for (let h = 0; countryCities[h].cities.length; h++) {
-              //   capitals += `<div>${countryCities[i].cities[h]}\n</div>`;
-              // }
-              console.log(capitals);
               return capitals;
             });
 
@@ -132,41 +177,8 @@ export class GeoLocMapComponent implements OnInit {
             .style('display', 'block')
             .text(country);
 
-          })
-
-          .on('mouseout', d => {
-            d3.select('.countryNames')
-            .style('display', 'none');
-            // d3.select('.selectedCountry')
-            // .style('display', 'none');
-          })
-
-          .on('dblclick', d => {
-            d3.select('.map')
-            .call(zoom()
-            .scaleExtent([this.scaledInitial, 4])
-
-
-            .on('zoom', () => {
-              g.attr('transform', (d3.event.transform) );
-              })
-            )
-            .on('wheel', () => {
-              d3.select('.map')
-              .call(zoom()
-              .scaleExtent([this.scaledInitial, 4])
-
-
-              .on('zoom', () => {
-                g.attr('transform', (d3.event.translate) );
-
-                })
-              );
-            })
-            .on('mousewheel.zoom', null);
           });
-        });
+      });
   }
 
 }
-

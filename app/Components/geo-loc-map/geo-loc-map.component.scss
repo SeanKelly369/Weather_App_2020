@@ -6,7 +6,23 @@ d {
   fill: orange;
 }
 
+#wrapper {
+  transform: scale(1.0);
+}
+
+#wrapper {
+  top: 400px;
+  overflow: hidden;
+}
+
 .map {
+  background-color: brown;
+  transform: scale(1.4);
+  left: 200px;
+}
+
+#worldContainer {
+  overflow: scroll;
   background-color: brown;
 }
 
@@ -16,6 +32,21 @@ d {
   stroke-width: 0.8px;
   stroke-linecap: round;
   stroke-linejoin: round;
+
+}
+
+#rangeContainer {
+  z-index: 44;
+  position: absolute;
+}
+
+#worldMap {
+  background-color: blueviolet;
+  transform: scale(1.0);
+  transform-origin: 0% 0% 0%;
+  width: 100%;
+  left: 100px;
+  height: 100%;
 }
 
 .countries:hover {
@@ -33,7 +64,8 @@ d {
   z-index: 33;
   position: absolute;
   float: left;
-  bottom: 14%;
+  top: 140px;
+  margin-left: 5px;
 }
 
 .countryNames {
