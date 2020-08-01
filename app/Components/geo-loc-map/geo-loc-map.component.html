@@ -1,11 +1,11 @@
 <div class="countryNames"></div>
+<input id="zoomer" type="range" step="0.1" min="1" max="5" value="1" (click)="setZoom(zoomValue)"/>
 <div id="wrapper">
   <div class="selectedCountry"></div>
+  <div id="rangeContainer">
+  </div>
   <div id="worldContainer">
     <div id="worldMap" >
-  </div>
-  <div id="rangeContainer">
-    <input id="my-range" type="range" step="0.1" min="1" max="5" value="1" (click)="setZoom(zoomValue)"/>
   </div>
 </div>
 </div>

@@ -30,55 +30,40 @@ export class GeoLocMapComponent implements AfterViewInit {
     let str = s.serializeToString(worldMapPath).split(' ')[4]
       .match(regexMatch).toString().replace(',', '.').replace(/\,/g, '');
     if (str === '1.7120') { str = '1'; }
-    console.log(str);
-    const inputPosition = parseFloat((document.getElementById('my-range') as HTMLInputElement).value);
+    const inputPosition = parseFloat((document.getElementById('zoomer') as HTMLInputElement).value);
     this.zoomValue = parseFloat(str) + inputPosition;
     if (this.zoomValue > 5) { this.zoomValue = 5; }
     const zoomValeStr = this.zoomValue.toString();
-    (document.getElementById('my-range') as HTMLInputElement).value = zoomValeStr;
+    (document.getElementById('zoomer') as HTMLInputElement).value = zoomValeStr;
     this.setZoom(this.zoomValue);
 
     return this.zoomValue;
   }
 
   setZoom(zoomValue: number): void {
-    console.log(zoomValue);
-    console.log(this.zoomValue);
     zoomValue = Math.round(this.zoomValue);
-    console.log( (document.getElementById('my-range') as HTMLInputElement).value);
     (document.getElementById('worldMap').style as unknown as HTMLElement) =
-      (`transform: scale(${(document.getElementById('my-range') as HTMLInputElement).value})`) as unknown as HTMLElement ;
-    console.log(event.composedPath()[3] as HTMLInputElement);
+      (`transform: scale(${(document.getElementById('zoomer') as HTMLInputElement).value})`) as unknown as HTMLElement ;
   }
 
   @HostListener('dblclick', ['$event'])
   onMouseZoom(event: MouseEvent): void {
-    console.log('dblclick check');
-    console.log(event);
+    let count = 0;
+    if (event) { count++; }
+    if (count > 0) {
+      document.getElementById('wrapper').scrollTo(event.clientX - screenLeft, event.clientY / 2 - screenTop);
+    }
     if ((event.composedPath()[3] as HTMLElement).id === 'worldMap') {
 
       this.getZoomValue(event);
     }
   }
 
-  // @HostListener('mousemove', ['$event'])
-  // onMouseMove(event: MouseEvent): void  {
-  //   console.log('mousemove check');
-  // }
-
   @HostListener('drag', ['$event'])
   whileDrag(event: MouseEvent): void {
     const xCursor = event.clientX;
     const yCursor = event.clientY;
     const imgEle = document.getElementById('worldContainer') as HTMLElement;
-    // console.log(imgEle);
-    if (imgEle !== null) {
-      imgEle.style.left = (xCursor - 100) + 'px';
-      imgEle.style.top = ( yCursor - 100) + 'px';
-
-        console.log(imgEle.style.left + ' - ' + imgEle.style.top);
-
-    }
   }
 
 
@@ -96,7 +81,7 @@ export class GeoLocMapComponent implements AfterViewInit {
         .scale(100);
 
       const svg = d3.select('#worldMap').append('svg')
-        .attr('id', 'test')
+        .attr('id', 'container')
         .attr('width', width)
         .attr('height', height);
       const path = d3.geoPath()
@@ -148,7 +133,7 @@ export class GeoLocMapComponent implements AfterViewInit {
             .attr('width', 400)
             .attr('height', 400)
             .attr('z-index', 35)
-            .attr('top', 400)
+            // .attr('top', 400)
             .attr('position', 'absolute')
             .style('background-color', 'blue')
             .html( (i: any) => {

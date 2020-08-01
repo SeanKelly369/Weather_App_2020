@@ -6,23 +6,30 @@ d {
   fill: orange;
 }
 
-#wrapper {
-  transform: scale(1.0);
+#zoomer {
+  position: absolute;
+  z-index: 60;
 }
 
 #wrapper {
-  top: 400px;
+  transform: scale(1.0);
+  height: 396px;
   overflow: hidden;
+  border-radius: 0px 0px 40px 40px;
+
 }
 
 .map {
   background-color: brown;
-  transform: scale(1.4);
+  transform: scale(1.45);
   left: 200px;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+
 }
 
 #worldContainer {
-  overflow: scroll;
   background-color: brown;
 }
 
@@ -41,12 +48,13 @@ d {
 }
 
 #worldMap {
+  top: 0;
   background-color: blueviolet;
-  transform: scale(1.0);
+  transform: scale(1.05);
   transform-origin: 0% 0% 0%;
   width: 100%;
   left: 100px;
-  height: 100%;
+  height: inherit;
 }
 
 .countries:hover {
